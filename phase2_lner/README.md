@@ -31,7 +31,7 @@ Loss = weighted cross-entropy (BIO) + 0.3 × (start + end boundary cross-entropy
 
 **Decoding.** Token predictions are turned into character spans using the stored offsets. Spans from overlapping
 windows are merged per document, near-duplicates (IoU ≥ 0.8) are removed, and a global confidence threshold
-(`CONFIDENCE_THRESHOLD = 0.95`) is applied. Submission checks: every test ID is present, there are no unknown IDs,
+(`CONFIDENCE_THRESHOLD = 0.96`) is applied. Submission checks: every test ID is present, there are no unknown IDs,
 labels are official, and all spans lie inside the document.
 
 ## Adaptation techniques
@@ -63,13 +63,13 @@ to `/kaggle/working/phase2_<backbone>_<method>/` (`best_model.pt`, `metrics.json
 3. *Run All*. The notebook trains, evaluates the confidence threshold on validation, runs KD (it needs the `decoder` / `full` run
    first), predicts the test set and writes `/kaggle/working/prediction.json` and `submission.zip`.
 
-The active configuration is the best submission: `decoder`, `full`, global threshold 0.95.
+The active configuration is the best submission: `decoder`, `full`, global threshold 0.96.
 
 ## Submissions (Codabench, strict Macro-F1)
 
 | Submission | Configuration | Strict Macro-F1 |
 |---|---|---|
-| submission_2 | decoder, full fine-tuning, global threshold 0.95 | **0.4362** (best) |
+| submission_2 | decoder, full fine-tuning, global threshold 0.96 | **0.4362** (best) |
 | submission_4 | experiment run | 0.4301 |
 | dec_full_opt_change | decoder, full fine-tuning, different optimiser settings | 0.4208 |
 | submission_7 | experiment run | 0.4181 |

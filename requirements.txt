@@ -1,0 +1,14 @@
+# Tested on Kaggle GPU notebooks (Python 3.10+, CUDA).
+torch>=2.1
+numpy
+tqdm
+matplotlib
+scikit-learn
+safetensors
+huggingface_hub
+transformers      # Phase 1: Trainer / TrainingArguments only (models are implemented in raw PyTorch)
+datasets          # Phase 1
+ijson             # Phase 1: streaming the large training JSON files
+peft>=0.20        # Phases 3-7: LoRA / rsLoRA / IA3
+bert-score        # Phase 6: BERTScore for validation only
+rouge-score       # Phase 6: ROUGE for validation only

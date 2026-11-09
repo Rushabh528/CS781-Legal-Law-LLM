@@ -1,0 +1,21 @@
+# Model weights and checkpoints (not part of the repository)
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+
+# Data, caches and generated submissions
+*.npz
+*.jsonl
+*.zip
+prediction.json
+cs781_phase1/
+phase*_*/**/best_model*
+
+# Python / Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
